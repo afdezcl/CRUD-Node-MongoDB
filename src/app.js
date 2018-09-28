@@ -1,6 +1,16 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 
-app.listen(3000, () => {
-    console.log("Server up on port 3000!");
+// import routes
+
+// settings
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); 
+
+
+// starting the server
+app.listen(app.get('port'), () => {
+    console.log(`Server up on port ${app.get('port')}!`);
 })
