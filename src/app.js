@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 
 // connecting to data base
-mongoose.connect('mongodb://localhost:27017/crud-db', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/crud-db', { useNewUrlParser: true })
     .then(db => console.log("DB connected"))
     .catch(err => console.log(err));
 
