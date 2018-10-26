@@ -4,8 +4,12 @@ const router = express.Router();
 const Task = require('../models/task');
 
 // Request GET in root path
-router.get('/', (req, res) => {
-    res.render('index');
+router.get('/', async (req, res) => {
+    const task = await Task.find();
+    console.log(task);
+    res.render('index', {
+        task // task: task
+    });
 });
 
 router.post('/add', async (req, res) => {    
