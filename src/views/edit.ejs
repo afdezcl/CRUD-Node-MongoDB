@@ -1,0 +1,23 @@
+<% include partials/_header %>
+
+    <div class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 mt-5 offset-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <form action="/update/<%= task._id %>" method="POST"> 
+                    <h5 class="card-title text-center">Edit task</h5>
+                    <div class="form-group">
+                      <input class="form-control" name="title" placeholder="Insert title of task..." type="text" value="<%= task.title %>">
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" cols="30" rows="3" name="description" placeholder="Insert description of task..."><%= task.description %></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Save task</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+<% include partials/_footer %>
